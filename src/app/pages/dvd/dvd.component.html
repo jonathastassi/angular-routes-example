@@ -1,0 +1,25 @@
+
+<mat-list>
+  <h2 mat-subheader>DVD List</h2>
+  <mat-list-item *ngFor="let dvd of dvds$ | async as dvd; let i=index">
+    <mat-icon mat-list-icon>album</mat-icon>
+    <h4 mat-line>{{dvd.title}}</h4>
+    <button mat-icon-button color="primary" routerLink="/dvds/{{ i }}"> 
+      <mat-icon>more_horiz</mat-icon>
+    </button>    
+    <button mat-icon-button color="primary" (click)="goDetails(i, dvd)" >
+      <mat-icon>info</mat-icon>
+    </button>     
+    <button mat-icon-button color="accent" >
+      <mat-icon>delete_outline</mat-icon>
+    </button>    
+  </mat-list-item>
+</mat-list>
+
+<button mat-fab color="primary" class="add-button">
+  <mat-icon>add</mat-icon>
+</button> 
+
+
+
+
