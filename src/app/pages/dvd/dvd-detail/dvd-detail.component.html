@@ -1,3 +1,4 @@
+<p *ngIf="title">Fetching details for DVD: {{ title }}</p>
 <ul *ngIf="dvd$ | async as dvd; else loading">
   <li>Title: {{ dvd.title }}</li>
   <li>Year: {{ dvd.year }}</li>

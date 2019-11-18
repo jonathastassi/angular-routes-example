@@ -23,7 +23,10 @@ export class DvdComponent implements OnInit {
   }
 
   goDetails(i: number, dvd: Dvd) {
-
+    this.router.navigate([`dvds/${i}`, { title: dvd.title }]);
   }
 
+  remove(i: number) {
+    this.service.remove(i);
+  }
 }

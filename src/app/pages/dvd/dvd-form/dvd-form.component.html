@@ -1,0 +1,23 @@
+<div fxLayout="column" fxLayoutAlign="space-beetwen">
+  <form [formGroup]="formDvd" (ngSubmit)="onSubmit()" fxLayout="row" fxLayoutAlign="space-around center" fxFill>
+
+    <mat-form-field fxFlex="40">
+      <input matInput placeholder="Title" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field fxFlex="10">
+      <input matInput placeholder="Year" type="number" formControlName="year">
+    </mat-form-field>
+
+    <mat-form-field fxFlex="30">
+      <input matInput placeholder="Genre" formControlName="genre">
+    </mat-form-field>
+
+    <div>
+      <button mat-button color="primary" type="submit">Save</button>
+    </div>
+  </form>
+  <div>
+    <button mat-button color="primary" (click)="goBack()">Back</button>
+  </div>
+</div>

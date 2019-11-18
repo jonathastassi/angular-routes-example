@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 export class DvdDetailComponent implements OnInit {
 
   dvd$: Observable<Dvd>;
+  title = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +24,13 @@ export class DvdDetailComponent implements OnInit {
     const index: number = +this.route.snapshot.paramMap.get('index');
 
     this.dvd$ = this.service.get(index);
+
+    this.route.paramMap
+      .subscribe((params: ParamMap) => {
+        if (params.has('title')) {
+          this.title = params.get('title');
+        }
+      })
     // console.log(this.route.snapshot.paramMap.get('index'));
     // console.log(this.route.snapshot.params.index);
     // this.route.paramMap
