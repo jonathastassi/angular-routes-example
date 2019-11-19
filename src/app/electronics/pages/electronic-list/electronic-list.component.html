@@ -1,0 +1,10 @@
+<mat-nav-list>
+  <h2 mat-subheader>Electronics List</h2>
+  <a mat-list-item *ngFor="let e of electronics$ | async; let i=index" routerLink="/electronics/{{i}}" >
+    <mat-icon mat-list-icon>library_books</mat-icon>
+    <h4 mat-line>{{e.name}}</h4>
+    <h5 mat-line>Price: {{e.price}}</h5>
+  </a>
+</mat-nav-list>
+ 
+
